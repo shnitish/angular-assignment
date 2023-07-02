@@ -1,0 +1,25 @@
+.popular-searches {
+  padding: 4rem;
+}
+.popular-searches > div {
+  max-width: 67.5rem;
+  margin: auto;
+}
+.popular-searches a {
+  text-decoration: none;
+  color: black;
+}
+
+.mb-1 {
+  margin-bottom: 1em;
+}
+
+a:hover {
+  border-bottom: 2px solid black;
+}
+
+@media (max-width: 750px) {
+  .popular-searches{
+    padding: 2rem;
+  }
+}

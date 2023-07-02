@@ -1,0 +1,27 @@
+
+.carousel-image {
+  position: relative;
+}
+
+.carousel-image > img {
+  min-width: 14rem;
+  border-radius: 12px;
+}
+
+.carousel-card-content {
+  margin-top: 1rem;
+}
+
+.carousel-card-content > h1 {
+  height: 2.75rem;
+}
+
+.price {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin: 1em 0;
+}
+.price-discount {
+  color: var(--clr-light-green);
+}

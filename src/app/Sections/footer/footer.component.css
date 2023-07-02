@@ -1,0 +1,15 @@
+.footer {
+  text-align: center;
+  color: var(--clr-primary);
+  background-color: var(--clr-gray);
+  padding:2rem 6rem 4rem 6rem;
+}
+
+.footer-content {
+  margin: auto;
+  max-width: 67.5rem;
+}
+
+.footer-content p:first-child {
+  margin-bottom: 3rem;
+}

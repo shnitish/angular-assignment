@@ -1,0 +1,20 @@
+<div class="popular-searches">
+  <div>
+    <h1 class="fs-250 fw-bold mb-1">POPULAR SEARCHES</h1>
+    <div class="menu-items mb-1" *ngFor="let data of menu">
+      <p class="mb-1">
+        <a class="fs-250 fw-bold" href="#">
+          {{ data.category }}
+        </a>
+      </p>
+      <div class="menu-links">
+        <ng-container *ngFor="let item of data.items; let i = index">
+          <a href="#"
+            ><span class="fs-200">{{ item }}</span>
+          </a>
+          <ng-container *ngIf="i < data.items.length - 1"> | </ng-container>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

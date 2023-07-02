@@ -1,1 +1,100 @@
 /* You can add global styles to this file, and also import other style files */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  font-family: "Lato Regular", sans-serif;
+}
+
+
+:root {
+  --clr-primary: hsl(0, 0%, 100%);
+  --clr-secondary: hsl(345, 84%, 45%);
+  --clr-soft-red: hsl(342, 71%, 97%);
+  --clr-soft-orange: hsl(38, 44%, 96%);
+  --clr-light-gray: hsl(0, 0%, 97%);
+  --clr-gray: hsl(0, 0%, 27%); 
+  --clr-light-green: hsl(150, 59%, 37%);
+
+  --fs-200: 0.75rem;
+  --fs-250: 0.875rem;
+  --fs-300: 1rem;
+  --fs-350: 1.25rem;
+
+  --fw-regular: 400;
+  --fw-bold: 700;
+  --fw-bolder: 800;
+}
+
+.fs-200 {
+  font-size: var(--fs-200);
+}
+
+.fs-250 {
+  font-size: var(--fs-250);
+}
+
+.fs-300 {
+  font-size: var(--fs-300);
+}
+
+.fs-350 {
+  font-size: var(--fs-350);
+}
+
+.fw-regular {
+  font-weight: var(--fw-regular);
+}
+
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+
+.icon {
+  cursor: pointer;
+}
+
+.flex-only {
+  display: flex;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-col {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}

@@ -1,0 +1,14 @@
+.claims {
+  line-height: 2;
+}
+
+.claims > h1 {
+  margin-bottom: 1rem;
+}
+
+.claim-decoration {
+  background-color: var(--clr-secondary);
+  height: 4px;
+  width: 40px;
+  margin-bottom: 1em;
+}

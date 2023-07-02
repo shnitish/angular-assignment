@@ -1,0 +1,46 @@
+.login-container {
+  width: 100vw;
+  height: 100vh;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.login-sidenav {
+  max-width: 26rem;
+}
+
+.login-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.login-full-width {
+  width: 100%;
+}
+
+.login-input {
+  margin: .5rem;
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  min-height: 25rem;
+  background: var(--clr-primary);
+  width: -webkit-fill-available;;
+}
+.login-input > h1 {
+  margin-bottom: 2em;
+}
+.mat-mdc-raised-button[disabled] {
+  background-color: #ececec!important;
+}
+.custom-button {
+  background-color: var(--clr-secondary)!important;
+  color: white!important;
+}
+.mdc-button {
+  width: 100%;
+}
+
+::ng-deep mat-label {
+  color: rgba(0, 0, 0, 0.6);
+}

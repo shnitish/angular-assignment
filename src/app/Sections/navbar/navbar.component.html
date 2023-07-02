@@ -1,0 +1,69 @@
+<section class="header">
+  <header>
+    <nav class="navbar flex">
+      <img
+        class="icon navbar-logo"
+        src="../../../assets/logo/licious-logo.svg"
+        alt="Licious"
+      />
+      <div class="location flex-only">
+        <img
+          class="icon location-icon"
+          src="../../../assets/icons/location.svg"
+          alt="Set Location"
+        />
+        <div class="address">
+          <div class="set-location flex-only">
+            <span class="fs-250 fw-bold">NCR</span>
+            <img
+              class="icon location-chevron"
+              src="../../../assets/icons/chevron-down.svg"
+              alt="Open Dropdown"
+            />
+          </div>
+          <p class="fs-200 current-location">
+            Saket, New Delhi, Delhi 110017, India
+          </p>
+        </div>
+      </div>
+      <div class="search-location flex">
+        <input type="text" placeholder="Search for any delicious product" />
+        <img src="../../../assets/icons/magnifier.svg" alt="Search" />
+      </div>
+      <div class="nav-actions flex">
+        <div class="category flex">
+          <img
+            class="icon category-icon"
+            src="../../../assets/icons/category.svg"
+            alt="category"
+          />
+          <span class="fs-250 fw-bold">Categories</span>
+        </div>
+        <div
+          class="login flex"
+          (click)="toggleLoginDrawer()"
+        >
+          <img
+            class="icon login-icon"
+            src="../../../assets/icons/user.svg"
+            alt="Login"
+          />
+          <span class="fs-250">Login</span>
+        </div>
+        <div class="cart flex">
+          <img
+            class="icon cart-icon"
+            src="../../../assets/icons/cart.svg"
+            alt="Cart"
+          />
+          <div class="cart-info flex-col">
+            <div class="cart-items fs-200 fw-bold">
+              {{ $itemsInCart | async | json }} items
+            </div>
+            <div class="cart-items-price fs-250 fw-bold">Rs 200</div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+</section>

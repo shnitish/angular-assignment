@@ -1,0 +1,79 @@
+a {
+  color: black;
+  text-decoration: none;
+}
+.contact {
+  line-height: 1.5;
+  padding: 4rem;
+}
+.contact-details {
+  max-width: 67.5rem;
+  margin: auto;
+}
+
+.logo > img {
+  height: 2.5rem;
+}
+
+.logo-line {
+  height: 1px;
+  width: 100%;
+  border: 1px solid #eaeaea;
+  position: relative;
+  top: 13px;
+  right: 0;
+}
+
+.social-links {
+  display: flex;
+  gap: 2rem;
+  padding: 0.5rem 0;
+}
+
+.socials {
+  gap: 1rem;
+}
+
+.app-stores {
+  margin-bottom: 4em;
+  gap: 1rem;
+}
+
+.icon {
+  height: 36px;
+}
+
+.social-icons {
+  gap: 1rem;
+  margin-top: 0.5em;
+}
+
+.useful-links ul, .about-us ul {
+  margin-top: 1em;
+}
+
+.contact-us {
+  flex: 0 20 auto;
+}
+
+.contact-us img {
+  margin: 2em 0;
+}
+
+.contact-us p {
+  margin-top: 1em;
+}
+
+ul {
+  list-style: none;
+}
+
+
+@media (max-width: 750px) {
+  .social-links {
+    flex-direction: column;
+  }
+  .contact {
+    padding: 2rem;
+  }
+}

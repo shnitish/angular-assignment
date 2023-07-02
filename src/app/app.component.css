@@ -1,0 +1,18 @@
+.claims-section {
+  background-color: var(--clr-soft-red);
+  padding: 2rem;
+}
+
+.claims-section > div {
+  max-width: 67.5rem;
+  margin: auto;
+  display: flex;
+  gap: 1.5rem;
+}
+
+@media(max-width: 750px) {
+  .claims-section > div {
+   flex-direction: column;
+  }
+  
+}

@@ -1,0 +1,31 @@
+<section class="hero">
+  <div class="hero-image">
+    <a href="#">
+      <img src="../../../assets/images/hero-image.jpeg" alt="50% Discount" />
+    </a>
+  </div>
+  <div class="shop-categories">
+    <h1 class="fs-350 fw-bold">Shop by categories</h1>
+    <h2 class="fs-250">Freshest meats and much more!</h2>
+    <div class="category-content">
+      <div class="category-tiles" *ngFor="let data of categories">
+        <a href="#">
+          <img
+            class="category-image"
+            [src]="data.imageLink"
+            [alt]="data.imageAlt"
+          />
+        </a>
+        <p class="category-title fs-300">{{ data.imageDescription }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="bestsellers">
+    <h1 class="fs-350 fw-bold">Bestsellers</h1>
+    <div class="bestsellers-carousel">
+      <div *ngFor="let bestSeller of bestSellers">
+        <app-card [bestSeller]="bestSeller"></app-card>
+      </div>
+    </div>
+  </div>
+</section>

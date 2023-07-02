@@ -1,0 +1,98 @@
+.header {
+  position: sticky;
+  z-index: 100;
+  top: 0;
+  width: 100%;
+  background-color: var(--clr-primary);
+}
+
+.navbar {
+  padding: 1rem;
+  gap: 3rem;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.navbar-logo {
+  height: 3rem;
+}
+
+.location .location-icon,
+.location-chevron {
+  height: 1rem;
+}
+
+.search-location {
+  width: 20rem;
+  position: relative;
+}
+
+.search-location > input {
+  width: 100%;
+  border: none;
+  outline: none;
+  max-width: 20rem;
+  background-color: var(--clr-light-gray);
+  padding: 0.5rem 1rem; 
+}
+
+.search-location img {
+  position: absolute;
+  right: 0;
+  height: 1.5rem;
+  background-color: var(--clr-light-gray);
+  padding-left: 1rem;
+}
+
+.nav-actions {
+  gap: 2.5rem;
+}
+.category-icon {
+  height: 2rem;
+}
+
+.login-icon {
+  height: 1.5rem;
+}
+
+.cart-icon {
+  height: 1.5rem;
+}
+
+.cart {
+  border: 1px solid var(--clr-secondary);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  gap: 0.5rem;
+}
+
+.login {
+  gap: 0.5rem;
+}
+
+.category {
+  gap: 0.5rem;
+}
+.cart-items-price {
+  color: var(--clr-secondary);
+}
+
+/* Media query to hide other things in mobile layout*/
+@media (max-width: 750px) {
+  .navbar-logo {
+    display: none;
+  }
+
+  .search-location {
+    display: none;
+  }
+
+  .nav-actions {
+    display: none;
+  }
+
+  .navbar {
+    display: block;
+  }
+}
