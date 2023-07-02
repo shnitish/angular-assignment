@@ -8,11 +8,12 @@ import { GlobalService } from 'src/app/Services/global.service';
 })
 export class NavbarComponent implements OnInit {
   public $itemsInCart = this.globalService.totalItemsSubject;
+  public $totalPriceOfCart = this.globalService.totalPriceSubject;
 
   ngOnInit(): void {
-    this.globalService.cartSubject.subscribe((val) => {
-      console.log(val);
-    });
+    // this.globalService.cartSubject.subscribe((val) => {
+    //   console.log(val);
+    // });
   }
 
   constructor(private globalService: GlobalService) {}

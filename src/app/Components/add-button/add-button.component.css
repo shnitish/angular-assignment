@@ -1,6 +1,4 @@
-.add-more {
-  cursor: pointer;
-  outline: none;
+.wrapper {
   border: none;
   position: absolute;
   right: -12px;
@@ -9,7 +7,19 @@
   padding: .1rem .3rem;
   background: var(--clr-primary);
   border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
-.add-more > img {
+
+.add-more, .remove-one {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.add-more > img, .remove-one > img {
   height: 1.75rem;
 }

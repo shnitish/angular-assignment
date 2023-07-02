@@ -39,10 +39,7 @@
           />
           <span class="fs-250 fw-bold">Categories</span>
         </div>
-        <div
-          class="login flex"
-          (click)="toggleLoginDrawer()"
-        >
+        <div class="login flex" (click)="toggleLoginDrawer()">
           <img
             class="icon login-icon"
             src="../../../assets/icons/user.svg"
@@ -50,17 +47,19 @@
           />
           <span class="fs-250">Login</span>
         </div>
-        <div class="cart flex">
+        <div class="flex" [ngClass]="{ cart: $itemsInCart | async }">
           <img
             class="icon cart-icon"
             src="../../../assets/icons/cart.svg"
             alt="Cart"
           />
           <div class="cart-info flex-col">
-            <div class="cart-items fs-200 fw-bold">
-              {{ $itemsInCart | async | json }} items
+            <div *ngIf="$itemsInCart | async" class="cart-items fs-200 fw-bold">
+              {{ $itemsInCart | async }} items
             </div>
-            <div class="cart-items-price fs-250 fw-bold">Rs 200</div>
+            <div class="cart-items-price fs-250 fw-bold">₹
+              {{ $totalPriceOfCart | async }}
+            </div>
           </div>
         </div>
       </div>

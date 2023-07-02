@@ -6,15 +6,16 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./add-button.component.css'],
 })
 export class AddButtonComponent {
-  private qty = 0;
+  public qty = 0;
 
   @Output() addItem = new EventEmitter<any>();
+  @Output() removeItem = new EventEmitter<any>();
 
   public addToCart() {
     this.addItem.emit(++this.qty);
   }
 
   public decrement() {
-    this.addItem.emit(--this.qty);
+    this.removeItem.emit(--this.qty);
   }
 }
