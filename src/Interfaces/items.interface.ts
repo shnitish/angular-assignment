@@ -12,3 +12,9 @@ export interface CartItem {
   id: number;
   qtyInCart: number;
 }
+
+export interface Store {
+  cart: CartItem[];
+  totalItems: number;
+  totalPrice: number;
+}

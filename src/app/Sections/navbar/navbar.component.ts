@@ -10,11 +10,7 @@ export class NavbarComponent implements OnInit {
   public $itemsInCart = this.globalService.totalItemsSubject;
   public $totalPriceOfCart = this.globalService.totalPriceSubject;
 
-  ngOnInit(): void {
-    // this.globalService.cartSubject.subscribe((val) => {
-    //   console.log(val);
-    // });
-  }
+  ngOnInit(): void {}
 
   constructor(private globalService: GlobalService) {}
 

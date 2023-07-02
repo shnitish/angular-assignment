@@ -11,11 +11,11 @@ export class AddButtonComponent {
   @Output() addItem = new EventEmitter<any>();
   @Output() removeItem = new EventEmitter<any>();
 
-  public addToCart() {
+  public addToCart(): void {
     this.addItem.emit(++this.qty);
   }
 
-  public decrement() {
+  public decrement(): void {
     this.removeItem.emit(--this.qty);
   }
 }

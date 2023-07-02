@@ -44,7 +44,7 @@
 @media (max-width: 750px) {
   .category-content {
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 1rem 2rem;
+    grid-gap: 1rem;
   }
   .hero-image {
     padding: 1em;

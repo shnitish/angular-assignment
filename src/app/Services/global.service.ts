@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject, BehaviorSubject } from 'rxjs';
-import { CartItem } from 'src/Interfaces/items.interface';
+import { CartItem, Store } from 'src/Interfaces/items.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -8,12 +8,11 @@ import { CartItem } from 'src/Interfaces/items.interface';
 export class GlobalService {
   constructor() {}
 
-  private store: { cart: CartItem[]; totalItems: number; totalPrice: number } =
-    {
-      cart: [],
-      totalItems: 0,
-      totalPrice: 0,
-    };
+  private store: Store = {
+    cart: [],
+    totalItems: 0,
+    totalPrice: 0,
+  };
 
   private toggleLogin = new Subject<''>();
   private cartItems = new Subject<{
