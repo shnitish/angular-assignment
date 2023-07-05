@@ -3,6 +3,11 @@
   padding: 4rem 8rem 2rem 8rem;
 }
 
+.category h2 {
+  padding: 1rem 8rem;
+  border-bottom: 1px solid #eeeeee;
+}
+
 .category-grid{
   display: grid;
   grid-template-columns: repeat(3, 1fr);

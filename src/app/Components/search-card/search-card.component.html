@@ -4,7 +4,8 @@
     <h2 class="fs-250">{{ searchResult?.heading }}</h2>
     <div class="search-result-card-details-action">
       <span class="fs-250"
-        >350gms | <span class="fs-250 fw-bold">₹ 75</span></span
+        >{{ searchResult?.quantity }} |
+        <span class="fs-250 fw-bold">₹ {{ searchResult?.price }}</span></span
       >
       <button class="fs-200">Add To Cart</button>
     </div>

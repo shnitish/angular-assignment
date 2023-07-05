@@ -28,25 +28,31 @@ export class CardComponent {
 
   public addToCart($event: number): void {
     const item = {
-      id: this.bestSeller.id,
+      id: this.bestSeller?.id ?? this.category?.id,
       qty: $event,
-      price: Number(this.bestSeller.discountedPrice),
-      name: this.bestSeller.heading,
+      price: Number(this.bestSeller?.discountedPrice ?? this.category.price),
+      name: this.bestSeller?.heading ?? this.category?.name,
     };
     this.handleCartAction(item);
-    this.openSnackBar(`${this.bestSeller.heading} has been added to the cart`);
+    this.openSnackBar(
+      `${
+        this.bestSeller?.heading ?? this.category?.name
+      } has been added to the cart`
+    );
   }
 
   public removeFromCart($event: number): void {
     const item = {
-      id: this.bestSeller.id,
+      id: this.bestSeller?.id ?? this.category?.id,
       qty: $event,
-      price: -Number(this.bestSeller.discountedPrice),
-      name: this.bestSeller.heading,
+      price: -Number(this.bestSeller?.discountedPrice ?? this.category.price),
+      name: this.bestSeller?.heading ?? this.category?.name,
     };
     this.handleCartAction(item);
     this.openSnackBar(
-      `${this.bestSeller.heading} has been removed from the cart`
+      `${
+        this.bestSeller?.heading ?? this.category?.name
+      } has been removed from the cart`
     );
   }
 

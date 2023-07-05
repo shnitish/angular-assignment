@@ -23,11 +23,11 @@
   </div>
   <div class="carousel-card-content">
     <h1 class="fs-300 fw-bold">{{ category.name }}</h1>
-    <h3 class="fs-200">{{ category.otherName }}</h3>
+    <h3 class="fs-200">{{ category.otherName || 'N/A'}}</h3>
     <span class="fs-200">{{ category.qty }}gms | </span>
     <span class="fs-200">10 - {{ category.pieces }} Pieces</span> |
     <span class="fs-200">Serves {{ category.serving }} Pieces</span>
-    <span class="price">
+    <span class="price" [attr.stockout]="category.qty < 1">
       <span class="fs-300 fw-bold" *ngIf="category.qty; else outOfStock"
         >₹{{ category.price }}</span
       >
@@ -35,8 +35,11 @@
         <span class="fs-300 fw-bold">Out Of Stock</span>
       </ng-template>
     </span>
-    <span class="fs-200">Today in <span class="fw-bold">90 min</span></span>
+    <span *ngIf="category.qty" class="fs-200"
+      >Today in <span class="fw-bold">90 min</span></span
+    >
     <app-add-button
+      *ngIf="category.qty"
       (addItem)="addToCart($event)"
       (removeItem)="removeFromCart($event)"
     ></app-add-button>

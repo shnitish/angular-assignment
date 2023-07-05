@@ -1,4 +1,3 @@
-
 .carousel-image {
   position: relative;
 }
@@ -28,4 +27,14 @@
 
 .gray-scale {
   filter: grayscale(100%);
+}
+
+.price[stockout="true"] {
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+::ng-deep .wrapper {
+  right: 0!important;
+  bottom: 0!important;
 }
