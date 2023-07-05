@@ -20,6 +20,7 @@ export class CardComponent {
     id: number;
     qty: number;
     price: number;
+    name: string;
   }): void {
     this.globalService.addItemsToCart(item);
   }
@@ -29,6 +30,7 @@ export class CardComponent {
       id: this.bestSeller.id,
       qty: $event,
       price: Number(this.bestSeller.discountedPrice),
+      name: this.bestSeller.heading,
     };
     this.handleCartAction(item);
     this.openSnackBar(`${this.bestSeller.heading} has been added to the cart`);
@@ -39,6 +41,7 @@ export class CardComponent {
       id: this.bestSeller.id,
       qty: $event,
       price: -Number(this.bestSeller.discountedPrice),
+      name: this.bestSeller.heading,
     };
     this.handleCartAction(item);
     this.openSnackBar(

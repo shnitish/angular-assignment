@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDrawer } from '@angular/material/sidenav';
+import { ACTIVE_DRAWER } from 'src/Interfaces/enums';
 import { GlobalService } from 'src/app/Services/global.service';
 
 @Component({
@@ -10,18 +10,13 @@ import { GlobalService } from 'src/app/Services/global.service';
 })
 export class DrawerComponent implements OnInit {
   @ViewChild('drawer') drawer!: MatDrawer;
-  public loginForm!: FormGroup;
 
-  constructor(
-    private globalService: GlobalService,
-    private formBuilder: FormBuilder
-  ) {}
+  public activeDrawer = ACTIVE_DRAWER;
+
+  constructor(public globalService: GlobalService) {}
   ngOnInit(): void {
     this.globalService.toggleDrawerSubject.subscribe(() =>
       this.drawer.toggle()
     );
-    this.loginForm = this.formBuilder.group({
-      mobileNumber: ['', [Validators.required, Validators.maxLength(10)]],
-    });
   }
 }

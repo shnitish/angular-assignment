@@ -1,0 +1,34 @@
+<div class="cart-drawer">
+  <h1 class="fs-350 fw-bold">Order Summary</h1>
+  <h2 class="fs-250 fw-bold">
+    Your cart value is less than ₹399 & delivery charge applies
+  </h2>
+  <div class="cart-actions" *ngFor="let data of cartItems; let i = index">
+    <span class="cart-actions-count fs-200">{{ i + 1 }}</span>
+    <span class="cart-actions-item fw-bold">{{ data?.name }}</span>
+    <div class="cart-action-wrapper">
+      <span class="fs-200">350gms</span>
+      <span class="fs-200 fw-bold clr-red">₹ {{ data?.price }}</span>
+      <app-add-button></app-add-button>
+    </div>
+  </div>
+  <div class="cart-details">
+    <h1 class="fs-300 fw-bold">Bill Details</h1>
+    <div class="flex-only">
+      <h3 class="fs-200">Subtotal</h3>
+      <span class="fs-200">{{ totalPrice | async }}</span>
+    </div>
+    <div class="flex-only">
+      <h3 class="fs-200">Delivey Charge</h3>
+      <span class="fs-200">39</span>
+    </div>
+    <div class="flex-only">
+      <h3 class="fs-250 fw-bold">Total</h3>
+      <span class="fs-250 clr-red">₹ {{ totalPrice | async }}</span>
+    </div>
+  </div>
+  <div class="cart-total flex">
+    <span class="fs-250 fw-bold">Total: ₹ {{ totalPrice | async }} </span>
+    <button>Proceed to Checkout</button>
+  </div>
+</div>

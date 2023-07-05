@@ -24,6 +24,8 @@ import { SearchComponent } from './Components/search/search.component';
 import { HomeComponent } from './Pages/home/home.component';
 import { CategoryComponent } from './Components/category/category.component';
 import { SearchCardComponent } from './Components/search-card/search-card.component';
+import { CartComponent } from './Components/cart/cart.component';
+import { LoginComponent } from './Components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import { SearchCardComponent } from './Components/search-card/search-card.compon
     HomeComponent,
     CategoryComponent,
     SearchCardComponent,
+    CartComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

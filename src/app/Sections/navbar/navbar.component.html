@@ -45,7 +45,7 @@
           />
           <span class="fs-250 fw-bold">Categories</span>
         </div>
-        <div class="drawer flex" (click)="toggleDrawer()">
+        <div class="drawer flex" (click)="toggleDrawer(activeDrawerEnum.LOGIN)">
           <img
             class="icon drawer-icon"
             src="../../../assets/icons/user.svg"
@@ -53,7 +53,11 @@
           />
           <span class="fs-250">Login</span>
         </div>
-        <div class="flex" [ngClass]="{ cart: $itemsInCart | async }">
+        <div
+          class="flex"
+          [ngClass]="{ cart: $itemsInCart | async }"
+          (click)="toggleDrawer(activeDrawerEnum.CART)"
+        >
           <img
             class="icon cart-icon"
             src="../../../assets/icons/cart.svg"

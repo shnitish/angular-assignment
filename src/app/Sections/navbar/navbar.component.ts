@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { GlobalService } from 'src/app/Services/global.service';
 import { Router } from '@angular/router';
-import { ROUTES_ENUM } from 'src/Interfaces/enums';
+import { ACTIVE_DRAWER, ROUTES_ENUM } from 'src/Interfaces/enums';
 
 @Component({
   selector: 'app-navbar',
@@ -9,6 +9,7 @@ import { ROUTES_ENUM } from 'src/Interfaces/enums';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent {
+  public activeDrawerEnum = ACTIVE_DRAWER;
   public searchInput!: string;
   public ROUTES = ROUTES_ENUM;
   public $itemsInCart = this.globalService.totalItemsSubject;
@@ -16,8 +17,8 @@ export class NavbarComponent {
 
   constructor(private globalService: GlobalService, private router: Router) {}
 
-  public toggleDrawer(): void {
-    this.globalService.toggleDrawer();
+  public toggleDrawer(activeDrawerComp: ACTIVE_DRAWER): void {
+    this.globalService.toggleDrawer(activeDrawerComp);
   }
 
   public navigateToHome(): void {

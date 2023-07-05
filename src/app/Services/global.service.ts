@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject, BehaviorSubject, Observable } from 'rxjs';
+import { ACTIVE_DRAWER } from 'src/Interfaces/enums';
 import { CartItem, Store } from 'src/Interfaces/items.interface';
 
 @Injectable({
@@ -13,13 +14,13 @@ export class GlobalService {
     totalItems: 0,
     totalPrice: 0,
   };
-
+  public activeDrawer: ACTIVE_DRAWER | null = null;
   private searchInputSubject: Subject<string> = new Subject<string>();
   private toggleDrawerSub = new Subject<''>();
-  private cartItems = new Subject<{
+  private cartItems = new BehaviorSubject<{
     items: CartItem[];
     totalItemsInCart: number;
-  }>();
+  }>({} as any);
   private totalItems = new BehaviorSubject<number>(this.store.totalItems);
   private totalPrice = new BehaviorSubject<number>(this.store.totalPrice);
 
@@ -34,6 +35,7 @@ export class GlobalService {
     id: number;
     qty: number;
     price: number;
+    name: string;
   }): void {
     if (payload.qty < 1) {
       this.store.cart = this.store.cart.filter(
@@ -46,7 +48,12 @@ export class GlobalService {
       if (existingItem) {
         existingItem.qtyInCart = payload.qty;
       } else {
-        const newItem = { id: payload.id, qtyInCart: payload.qty };
+        const newItem = {
+          id: payload.id,
+          qtyInCart: payload.qty,
+          name: payload.name,
+          price: payload.price,
+        };
         this.store.cart.push(newItem);
       }
     }
@@ -60,7 +67,8 @@ export class GlobalService {
     });
   }
 
-  public toggleDrawer(): void {
+  public toggleDrawer(currentDrawerContent: ACTIVE_DRAWER): void {
+    this.activeDrawer = currentDrawerContent;
     this.toggleDrawerSub.next('');
   }
 

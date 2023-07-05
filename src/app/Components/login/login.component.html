@@ -1,0 +1,19 @@
+<div>
+  <img src="../../../assets/images/user-login-new.jpg" alt="Chicken Meat" />
+</div>
+<div class="login-input">
+  <h1 class="fs-350 fw-bold">Sign In/ Sign Up</h1>
+  <form class="login-form" [formGroup]="loginForm">
+    <mat-form-field class="login-full-width custom-mat-label">
+      <mat-label>Mobile Number</mat-label>
+      <input matInput maxlength="10" formControlName="mobileNumber" required />
+    </mat-form-field>
+    <button
+      mat-raised-button
+      class="custom-button"
+      [disabled]="!loginForm.valid"
+    >
+      Proceed Via OTP
+    </button>
+  </form>
+</div>

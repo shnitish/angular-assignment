@@ -1,29 +1,11 @@
 <mat-drawer-container class="drawer-container" autosize>
   <mat-drawer #drawer class="drawer-sidenav" mode="over" position="end">
-    <div class="drawer-drawer">
-      <img src="../../../assets/images/user-login-new.jpg" alt="Chicken Meat" />
-    </div>
-    <div class="drawer-input">
-      <h1 class="fs-350 fw-bold">Sign In/ Sign Up</h1>
-      <form class="drawer-form" [formGroup]="loginForm">
-        <mat-form-field class="drawer-full-width custom-mat-label">
-          <mat-label>Mobile Number</mat-label>
-          <input
-            matInput
-            maxlength="10"
-            formControlName="mobileNumber"
-            required
-          />
-        </mat-form-field>
-        <button
-          mat-raised-button
-          class="custom-button"
-          [disabled]="!loginForm.valid"
-        >
-          Proceed Via OTP
-        </button>
-      </form>
-    </div>
+    <app-login
+      *ngIf="activeDrawer.LOGIN === globalService.activeDrawer"
+    ></app-login>
+    <app-cart
+      *ngIf="activeDrawer.CART === globalService.activeDrawer"
+    ></app-cart>
   </mat-drawer>
   <ng-content></ng-content>
 </mat-drawer-container>
