@@ -1,0 +1,15 @@
+.category h1{
+  background-color: #c9e3ff;
+  padding: 4rem 8rem 2rem 8rem;
+}
+
+.category-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 2rem 8rem;
+  gap:1.5rem;
+}
+
+::ng-deep .carousel-card-content {
+  position: relative!important;
+}

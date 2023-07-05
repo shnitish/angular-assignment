@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CITIES } from '../../../static/data';
 
 @Component({
   selector: 'app-city',
@@ -6,24 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./city.component.css'],
 })
 export class CityComponent {
-  public cities = [
-    'Bengaluru',
-    'NCR',
-    'Hyderabad',
-    'Chandigarh',
-    'Panchkula',
-    'Mohali',
-    'Mumbai',
-    'Pune',
-    'Chennai',
-    'Coimbatore',
-    'Jaipur',
-    'Cochin',
-    'Vijayawada',
-    'Visakhapatnam',
-    'Kolkata',
-    'Lucknow',
-    'Kanpur',
-    'Nagpur',
-  ];
+  public cities = CITIES;
 }

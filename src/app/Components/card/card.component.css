@@ -25,3 +25,7 @@
 .price-discount {
   color: var(--clr-light-green);
 }
+
+.gray-scale {
+  filter: grayscale(100%);
+}

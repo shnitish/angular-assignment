@@ -20,3 +20,15 @@ export interface Store {
   totalItems: number;
   totalPrice: number;
 }
+
+export interface Category {
+  id: number;
+  name: string;
+  imageLink: string;
+  imgAlt: string;
+  otherName: string;
+  qty: number;
+  pieces: number;
+  serving: number;
+  price: number;
+}

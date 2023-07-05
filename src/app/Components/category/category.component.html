@@ -1,1 +1,8 @@
-<p>category works!</p>
+<div class="category">
+  <h1 class="fs-400 fw-bold">Fishes and Seafood</h1>
+  <div class="category-grid">
+    <ng-container *ngFor="let data of category">
+      <app-card [category]="data"></app-card>
+    </ng-container>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-<div class="carousel-card">
+<div class="carousel-card" *ngIf="bestSeller">
   <div class="carousel-image">
     <img [src]="bestSeller.imageLink" alt="Chicken" />
     <app-add-button
@@ -15,5 +15,30 @@
       <small class="price-discount">{{ bestSeller.discount }} off</small></span
     >
     <span class="fs-200">Today in <span class="fw-bold">90 min</span></span>
+  </div>
+</div>
+<div class="carousel-card" *ngIf="category">
+  <div class="carousel-image" [class.gray-scale]="category.qty < 1">
+    <img [src]="category.imageLink" alt="Chicken" />
+  </div>
+  <div class="carousel-card-content">
+    <h1 class="fs-300 fw-bold">{{ category.name }}</h1>
+    <h3 class="fs-200">{{ category.otherName }}</h3>
+    <span class="fs-200">{{ category.qty }}gms | </span>
+    <span class="fs-200">10 - {{ category.pieces }} Pieces</span> |
+    <span class="fs-200">Serves {{ category.serving }} Pieces</span>
+    <span class="price">
+      <span class="fs-300 fw-bold" *ngIf="category.qty; else outOfStock"
+        >₹{{ category.price }}</span
+      >
+      <ng-template #outOfStock>
+        <span class="fs-300 fw-bold">Out Of Stock</span>
+      </ng-template>
+    </span>
+    <span class="fs-200">Today in <span class="fw-bold">90 min</span></span>
+    <app-add-button
+      (addItem)="addToCart($event)"
+      (removeItem)="removeFromCart($event)"
+    ></app-add-button>
   </div>
 </div>

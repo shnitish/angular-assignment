@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Item } from 'src/Interfaces/items.interface';
+import { Category, Item } from 'src/Interfaces/items.interface';
 import { GlobalService } from 'src/app/Services/global.service';
 
 @Component({
@@ -10,6 +10,7 @@ import { GlobalService } from 'src/app/Services/global.service';
 })
 export class CardComponent {
   @Input() bestSeller!: Item;
+  @Input() category!: Category;
 
   constructor(
     private globalService: GlobalService,
