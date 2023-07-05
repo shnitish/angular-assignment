@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-hero',
@@ -164,4 +165,10 @@ export class HeroComponent {
       discount: '5%',
     },
   ];
+
+  constructor(private router: Router, private route: ActivatedRoute) {}
+
+  public navigateToCategory(): void {
+    this.router.navigate(['abc'], { relativeTo: this.route });
+  }
 }

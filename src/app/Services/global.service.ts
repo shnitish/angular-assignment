@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject, BehaviorSubject } from 'rxjs';
+import { Subject, BehaviorSubject, Observable } from 'rxjs';
 import { CartItem, Store } from 'src/Interfaces/items.interface';
 
 @Injectable({
@@ -14,7 +14,8 @@ export class GlobalService {
     totalPrice: 0,
   };
 
-  private toggleLogin = new Subject<''>();
+  private searchInputSubject: Subject<string> = new Subject<string>();
+  private toggleDrawerSub = new Subject<''>();
   private cartItems = new Subject<{
     items: CartItem[];
     totalItemsInCart: number;
@@ -22,7 +23,9 @@ export class GlobalService {
   private totalItems = new BehaviorSubject<number>(this.store.totalItems);
   private totalPrice = new BehaviorSubject<number>(this.store.totalPrice);
 
-  public toggleLoginSubject = this.toggleLogin.asObservable();
+  public searchInput: Observable<string> =
+    this.searchInputSubject.asObservable();
+  public toggleDrawerSubject = this.toggleDrawerSub.asObservable();
   public cartSubject = this.cartItems.asObservable();
   public totalItemsSubject = this.totalItems.asObservable();
   public totalPriceSubject = this.totalPrice.asObservable();
@@ -57,7 +60,11 @@ export class GlobalService {
     });
   }
 
-  public toggleLoginDrawer(): void {
-    this.toggleLogin.next('');
+  public toggleDrawer(): void {
+    this.toggleDrawerSub.next('');
+  }
+
+  public updateSearchInput(searchInput: string): void {
+    this.searchInputSubject.next(searchInput);
   }
 }

@@ -18,7 +18,12 @@ import { ContactComponent } from './Sections/contact/contact.component';
 import { MenuComponent } from './Sections/menu/menu.component';
 import { CityComponent } from './Sections/city/city.component';
 import { AddButtonComponent } from './Components/add-button/add-button.component';
-import { LoginComponent } from './Components/login/login.component';
+import { DrawerComponent } from './Components/drawer/drawer.component';
+import { AppRoutingModule } from './app-routing.module';
+import { SearchComponent } from './Components/search/search.component';
+import { HomeComponent } from './Pages/home/home.component';
+import { CategoryComponent } from './Components/category/category.component';
+import { SearchCardComponent } from './Components/search-card/search-card.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +37,11 @@ import { LoginComponent } from './Components/login/login.component';
     MenuComponent,
     CityComponent,
     AddButtonComponent,
-    LoginComponent,
+    DrawerComponent,
+    SearchComponent,
+    HomeComponent,
+    CategoryComponent,
+    SearchCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,6 +53,7 @@ import { LoginComponent } from './Components/login/login.component';
     MatFormFieldModule,
     ReactiveFormsModule,
     MatSnackBarModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

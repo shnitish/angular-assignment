@@ -5,6 +5,7 @@
         class="icon navbar-logo"
         src="../../../assets/logo/licious-logo.svg"
         alt="Licious"
+        (click)="navigateToHome()"
       />
       <div class="location flex-only">
         <img
@@ -26,8 +27,13 @@
           </p>
         </div>
       </div>
-      <div class="search-location flex">
-        <input type="text" placeholder="Search for any delicious product" />
+      <div class="search-location flex" (click)="navigateToSearch()">
+        <input
+          type="text"
+          placeholder="Search for any delicious product"
+          [(ngModel)]="searchInput"
+          (input)="updateSearchTerm(searchInput)"
+        />
         <img src="../../../assets/icons/magnifier.svg" alt="Search" />
       </div>
       <div class="nav-actions flex">
@@ -39,9 +45,9 @@
           />
           <span class="fs-250 fw-bold">Categories</span>
         </div>
-        <div class="login flex" (click)="toggleLoginDrawer()">
+        <div class="drawer flex" (click)="toggleDrawer()">
           <img
-            class="icon login-icon"
+            class="icon drawer-icon"
             src="../../../assets/icons/user.svg"
             alt="Login"
           />
@@ -57,7 +63,8 @@
             <div *ngIf="$itemsInCart | async" class="cart-items fs-200 fw-bold">
               {{ $itemsInCart | async }} items
             </div>
-            <div class="cart-items-price fs-250 fw-bold">₹
+            <div class="cart-items-price fs-250 fw-bold">
+              ₹
               {{ $totalPriceOfCart | async }}
             </div>
           </div>

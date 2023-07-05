@@ -1,24 +1,24 @@
-.login-container {
+.drawer-container {
   width: 100vw;
   height: 100vh;
   border: 1px solid rgba(0, 0, 0, 0.5);
 }
 
-.login-sidenav {
+.drawer-sidenav {
   max-width: 26rem;
 }
 
-.login-form {
+.drawer-form {
   min-width: 150px;
   max-width: 500px;
   width: 100%;
 }
 
-.login-full-width {
+.drawer-full-width {
   width: 100%;
 }
 
-.login-input {
+.drawer-input {
   margin: .5rem;
   padding: 1rem;
   position: absolute;
@@ -27,7 +27,7 @@
   background: var(--clr-primary);
   width: -webkit-fill-available;;
 }
-.login-input > h1 {
+.drawer-input > h1 {
   margin-bottom: 2em;
 }
 .mat-mdc-raised-button[disabled] {

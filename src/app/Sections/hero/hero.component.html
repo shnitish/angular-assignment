@@ -7,9 +7,9 @@
   <div class="shop-categories">
     <h1 class="fs-350 fw-bold">Shop by categories</h1>
     <h2 class="fs-250">Freshest meats and much more!</h2>
-    <div class="category-content">
+    <div class="category-content" (click)="navigateToCategory()">
       <div class="category-tiles" *ngFor="let data of categories">
-        <a href="#">
+        <a>
           <img
             class="category-image"
             [src]="data?.imageLink"

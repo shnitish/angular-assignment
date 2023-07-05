@@ -49,6 +49,7 @@ body {
   --fs-250: 0.875rem;
   --fs-300: 1rem;
   --fs-350: 1.25rem;
+  --fs-400: 1.5rem;
 
   --fw-regular: 400;
   --fw-bold: 700;
@@ -69,6 +70,10 @@ body {
 
 .fs-350 {
   font-size: var(--fs-350);
+}
+
+.fs-400 {
+  font-size: var(--fs-400);
 }
 
 .fw-regular {

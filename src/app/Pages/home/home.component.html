@@ -1,0 +1,14 @@
+<div class="content">
+  <router-outlet></router-outlet>
+  <section class="claims-section">
+    <div>
+      <ng-container *ngFor="let data of claims">
+        <app-claims [claims]="data"></app-claims>
+      </ng-container>
+    </div>
+  </section>
+  <app-contact></app-contact>
+  <app-city></app-city>
+  <app-menu></app-menu>
+  <app-footer></app-footer>
+</div>

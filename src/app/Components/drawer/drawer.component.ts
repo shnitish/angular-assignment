@@ -4,12 +4,12 @@ import { MatDrawer } from '@angular/material/sidenav';
 import { GlobalService } from 'src/app/Services/global.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
+  selector: 'app-drawer',
+  templateUrl: './drawer.component.html',
+  styleUrls: ['./drawer.component.css'],
 })
-export class LoginComponent implements OnInit {
-  @ViewChild('drawer') login!: MatDrawer;
+export class DrawerComponent implements OnInit {
+  @ViewChild('drawer') drawer!: MatDrawer;
   public loginForm!: FormGroup;
 
   constructor(
@@ -17,7 +17,9 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder
   ) {}
   ngOnInit(): void {
-    this.globalService.toggleLoginSubject.subscribe(() => this.login.toggle());
+    this.globalService.toggleDrawerSubject.subscribe(() =>
+      this.drawer.toggle()
+    );
     this.loginForm = this.formBuilder.group({
       mobileNumber: ['', [Validators.required, Validators.maxLength(10)]],
     });

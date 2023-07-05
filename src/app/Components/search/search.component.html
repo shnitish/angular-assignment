@@ -1,0 +1,9 @@
+<section class="search-results">
+  <h1 class="fs-400 fw-bold">Search Results</h1>
+  <h2 class="fs-250">Freshest meats just for you</h2>
+  <div class="search-results-wrapper">
+    <ng-container *ngFor="let data of searchResults">
+      <app-search-card [searchResult]="data"></app-search-card>
+    </ng-container>
+  </div>
+</section>

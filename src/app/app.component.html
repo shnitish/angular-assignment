@@ -1,17 +1,4 @@
-<app-login>
-  <div class="content">
-    <app-navbar></app-navbar>
-    <app-hero></app-hero>
-    <section class="claims-section">
-      <div>
-        <ng-container *ngFor="let data of claims">
-          <app-claims [claims]="data"></app-claims>
-        </ng-container>
-      </div>
-    </section>
-    <app-contact></app-contact>
-    <app-city></app-city>
-    <app-menu></app-menu>
-    <app-footer></app-footer>
-  </div>
-</app-login>
+<app-drawer>
+  <app-navbar></app-navbar>
+  <router-outlet></router-outlet>
+</app-drawer>

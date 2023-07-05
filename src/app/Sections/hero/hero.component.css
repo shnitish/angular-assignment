@@ -12,6 +12,7 @@
 }
 
 .category-image {
+  cursor: pointer;
   max-height: 8rem;
 }
 
