@@ -9,7 +9,7 @@
     <div class="cart-action-wrapper">
       <span class="fs-200">350gms</span>
       <span class="fs-200 fw-bold clr-red">₹ {{ data?.price }}</span>
-      <app-add-button></app-add-button>
+      <app-add-button [counter]="data?.qtyInCart || 0"></app-add-button>
     </div>
   </div>
   <div class="cart-details">
