@@ -1,9 +1,13 @@
 <div class="category">
-  <h1 class="fs-400 fw-bold">Fishes and Seafood</h1>
-  <h2 class="fs-300">{{ category.length }} items</h2>
-  <div class="category-grid">
-    <ng-container *ngFor="let data of category">
-      <app-card [category]="data"></app-card>
-    </ng-container>
+  <div class="category-heading">
+    <h1 class="fs-400 fw-bold">Fishes and Seafood</h1>
+  </div>
+  <div class="category-wrapper">
+    <h2 class="fs-300">{{ category.length }} items</h2>
+    <div class="category-grid">
+      <ng-container *ngFor="let data of category">
+        <app-card [category]="data"></app-card>
+      </ng-container>
+    </div>
   </div>
 </div>

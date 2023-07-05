@@ -1,17 +1,25 @@
-.category h1{
+.category-heading {
   background-color: #c9e3ff;
-  padding: 4rem 8rem 2rem 8rem;
+}
+.category h1{
+  max-width: 67.5rem;
+  margin: auto;
+  padding: 4rem 8rem 2rem 0;
 }
 
+.category-wrapper {
+  max-width: 67.5rem;
+  margin: auto;
+}
 .category h2 {
-  padding: 1rem 8rem;
+  padding: 2rem 0;
   border-bottom: 1px solid #eeeeee;
+  margin-bottom: 3rem;
 }
 
 .category-grid{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  padding: 2rem 8rem;
   gap:1.5rem;
 }
 
